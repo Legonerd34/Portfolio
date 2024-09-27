@@ -1,0 +1,110 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <a href="fboop2/build/web/index.html">note to self do not click if you want to save your sanity</a>
+
+    <h1>JavaScript programs</h1>
+
+
+    <div id="apps">
+        <div class="app">
+            
+            <h2 id="calc-title">Calculator</h2>
+
+            <div id="calculator">
+                <input id="screen" readonly="true">
+                <div id="buttons">
+                    <button onclick="append_display('+')" class="operator">+</button>
+                    <button onclick="append_display('7')" class="button">7</button>
+                    <button onclick="append_display('8')" class="button">8</button>
+                    <button onclick="append_display('9')" class="button">9</button>
+                    <button onclick="append_display('-')" class="operator">-</button>
+                    <button onclick="append_display('4')" class="button">4</button>
+                    <button onclick="append_display('5')" class="button">5</button>
+                    <button onclick="append_display('6')" class="button">6</button>
+                    <button onclick="append_display('*')" class="operator">*</button>
+                    <button onclick="append_display('1')" class="button">1</button>
+                    <button onclick="append_display('2')" class="button">2</button>
+                    <button onclick="append_display('3')" class="button">3</button>
+                    <button onclick="append_display('/')" class="operator">/</button>
+                    <button onclick="append_display('0')" class="button">0</button>
+                    <button onclick="append_display('.')" class="button">.</button>
+                    <button onclick="calculate()" class="operator">=</button>
+                    <button onclick="clear_display()" class="operator">AC</button>
+                </div>
+
+                <script src="calc.js"></script>
+            </div>
+        </div>
+    
+
+        <div class="app" id="app-weather">
+
+            <h2>Weather app</h2>
+
+            <form class="form">
+                <input type="text" placeholder="Please enter a city" id="input">
+                <button type="submit" id="button">Submit</button>
+            </form>
+
+            <div id="card" style="display: none;">
+                <h1 id="city"></h1>
+                <p id="temp"></p>
+                <p id="humidity"></p>
+                <p id="description"></p>
+                <p id="emoji"></p>
+                <p id="time"></p>
+                <p id="error"></p>
+            </div>
+
+            <script src="weather.js"></script>
+
+        </div>
+
+        <div class="app" id="recipe">
+
+            <h2>Recipe finder</h2>
+
+            <p>May take up to 30 seconds</p>
+
+            <form id="container">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_1" class="input-recipe" autocomplete="on" required="required">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_2" class="input-recipe" autocomplete="on" required="required">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_3" class="input-recipe" autocomplete="on" required="required">
+                <input type="number" placeholder="how many reciepes would you like" id="count" class="input-recipe" value="5" min="1" max="10">
+
+                <button type="submit" class="button-recipe">submit</button>    
+            </form><br><br>
+    
+            <div id="output"></div>
+
+            <script src="recipe.js"></script>
+        </div>
+
+        
+
+    </div>
+
+    <h1>Web design</h1>
+
+    <br>
+
+    <div class="web_app">
+    
+        <object type="text/html" data="https://www.angelagreenwood.net" id="web">
+        </object>
+
+    </div>
+
+    
+
+
+
+</body>
+</html>
