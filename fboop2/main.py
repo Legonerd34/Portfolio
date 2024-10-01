@@ -1,8 +1,11 @@
 import asyncio
 import random
+import time
 
 import pygame
 from pygame.locals import *
+
+random.seed(time.time())
 
 pygame.init()
 
