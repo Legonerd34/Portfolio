@@ -49,6 +49,13 @@ body {
     border-radius: 15px;
 }
 
+#flappy {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 15px;
+}
+
 
 #calculator{
     font-family: Arial, sans-serif;
