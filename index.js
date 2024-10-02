@@ -18,10 +18,7 @@ function load() {
 function reload() {
     var objects = document.getElementById("flappy");
 
-    for(var i = 0; i < objects.length; i++) {
-
-        var obj = objects[i];
-
-        obj.data = obj.data;
-    }
+    
+    objects.data = objects.data;
+    
 }
