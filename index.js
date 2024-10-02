@@ -18,7 +18,8 @@ function load() {
 function reload() {
     var objects = document.getElementById("flappy");
 
-    
     objects.data = objects.data;
+
+    console.log("reloaded");
     
 }
