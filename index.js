@@ -14,6 +14,9 @@ function load() {
 }
 
 function reload() {
+
+    window.onbeforeunload = null;
+
     var objects = document.getElementById("flappy");
 
     objects.data = objects.data;
