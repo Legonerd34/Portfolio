@@ -9,10 +9,8 @@ function load() {
 
     button.textContent = "Re-load";
 
-    const nodeMap = button.attributes;
-
-    nodeMap.removeNamedItem("onclick");
-    nodeMap.setNamedItem("onclick", "reload()");
+    button.removeAttribute("onclick");
+    button.setAttribute("onclick", "reload()");
 }
 
 function reload() {
