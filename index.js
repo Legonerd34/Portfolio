@@ -14,12 +14,11 @@ function load() {
 }
 
 function reload() {
+    var object = document.getElementById("flappy");
 
-    window.onbeforeunload = null;
-
-    var objects = document.getElementById("flappy");
-
-    objects.data = objects.data;
+    var parent = object.parentNode;
+    parent.removeChild(object);
+    parent.appendChild(object);
 
     console.log("reloaded");
     
