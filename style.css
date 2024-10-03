@@ -77,6 +77,23 @@ pre {
 code {
     white-space: pre !important; 
 }
+.hljs {
+    white-space: pre-wrap; /* This ensures that the indentation (tabs or spaces) is preserved */
+    word-wrap: break-word; /* Prevents long lines from breaking the layout */
+}
+
+.hljs-ln-code {
+    padding-left: 10px; /* Adjust padding as necessary */
+    white-space: pre-wrap; /* Ensures indentation is visible in the code block */
+}
+
+.hljs-ln-numbers {
+    user-select: none; /* Prevents the line numbers from being selected with the text */
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid rgb(63, 62, 62); /* Add a visual divider between the line numbers and code */
+}
+
 
 .hljs, pre, code {
     white-space: pre-wrap !important; /* Ensure spaces/tabs are respected */
