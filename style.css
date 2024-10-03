@@ -78,6 +78,11 @@ code {
     white-space: pre !important; 
 }
 
+.hljs, pre, code {
+    white-space: pre-wrap !important; /* Ensure spaces/tabs are respected */
+    padding-left: 10px; /* Optional: Add padding for better appearance */
+}
+
 
 .app::-webkit-scrollbar {
     display: none; 
