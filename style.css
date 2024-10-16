@@ -11,6 +11,70 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+#me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    font-family: monospace, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 50%;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    margin: 5px;
+}
+
+#profile_picture {
+    border: none;
+    border-radius: 100%;
+
+}
+
+#page {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+    
+}
+
+#projects {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    font-family: monospace, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-height: 100%;
+}
+
+.project {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgb(118, 118, 118);
+}
+
 .pythons-container{
 
     display: grid;
@@ -31,7 +95,7 @@ body {
     margin: 20px;
 }
 
-#code {
+.code {
     max-height: 815px;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -40,6 +104,14 @@ body {
     background-color: rgb(40, 44, 52);
     border-radius: 15px;
 
+}
+
+
+.app-body {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .app {
