@@ -22,8 +22,8 @@ body {
     border: none;
     border-radius: 15px;
     padding: 20px;
-    max-width: 50%;
-    max-height: 100%;
+    width: auto;
+    height: auto;
     overflow-y: scroll;
     scrollbar-width: none; 
     -ms-overflow-style: none;
@@ -40,8 +40,9 @@ body {
     display: grid;
     gap: 20px;
     padding: 25px;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20px;
+    grid-template-columns: auto 1fr;
+    margin: 5px;
+    align-items: stretch !important;
 }
 
 a {
@@ -111,7 +112,7 @@ a {
     display: grid;
     gap: 20px;
     padding: 25px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 1fr; 
 }
 
 .app {
