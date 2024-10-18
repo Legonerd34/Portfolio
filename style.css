@@ -2,15 +2,65 @@ body {
     background-color: #172331;
     color: white;
     font-family: monospace;
+    margin: 25px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
+.content {
+    flex: 1;
+}
+a img {
+    margin: 10px; /* Adds spacing between the icons */
+    transition: transform 0.3s ease; /* Smooth animation */
+  }
+  
+  a img:hover {
+    transform: scale(1.1); /* Slightly enlarges the icon on hover */
+  }
+  
+
 #apps {
-    display: grid;
+    display: grid !important;
     gap: 10px;
     padding: 25px;
     grid-template-columns: repeat(3, 1fr);
 }
 
+#footer {
+    width: 100%;         /* Makes the footer span the full width */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: #172331;
+}
+
+#footer-elements {
+    display: grid !important;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 1px; 
+    padding: 5px;
+    color: white;
+    background-color: #172331;
+}
+
+@media (max-width: 600px) {
+    #footer-elements {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center;    /* Center the items */
+    }
+}
+  
+
+
+.footer-element {
+    text-align: center;
+    background-color: #172331;       /* Center aligns the content inside each item */
+}
 #me {
     display: flex;
     flex-direction: column;
@@ -37,11 +87,10 @@ body {
 }
 
 #page {
-    display: grid;
+    display: grid !important;
     gap: 20px;
     padding: 25px;
     grid-template-columns: auto 1fr;
-    margin: 5px;
     align-items: stretch !important;
 }
 
@@ -52,7 +101,7 @@ a {
 }
 
 #projects {
-    display: grid;
+    display: grid !important;
     gap: 20px;
     padding: 25px;
     grid-template-columns: repeat(3, 1fr);
@@ -78,7 +127,7 @@ a {
 
 .pythons-container{
 
-    display: grid;
+    display: grid !important;
     gap: 20px;
     padding: 25px;
     grid-template-columns: repeat(2, 1fr);
@@ -109,7 +158,7 @@ a {
 
 
 .app-body {
-    display: grid;
+    display: grid !important;
     gap: 20px;
     padding: 25px;
     grid-template-columns: auto 1fr; 
