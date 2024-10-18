@@ -18,9 +18,9 @@ a img {
     transition: transform 0.3s ease; /* Smooth animation */
   }
   
-  a img:hover {
+a img:hover {
     transform: scale(1.1); /* Slightly enlarges the icon on hover */
-  }
+}
   
 
 #apps {
