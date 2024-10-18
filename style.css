@@ -30,7 +30,7 @@ a img:hover {
     grid-template-columns: repeat(3, 1fr);
 }
 
-#footer {
+.footer {
     width: 100%;         /* Makes the footer span the full width */
     color: white;
     text-align: center;
@@ -38,7 +38,7 @@ a img:hover {
     background-color: #172331;
 }
 
-#footer-elements {
+.footer-elements {
     display: grid !important;
     grid-auto-flow: column;
     justify-content: center;
