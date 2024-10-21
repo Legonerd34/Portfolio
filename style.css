@@ -10,6 +10,11 @@ body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+  
+
 .content {
     flex: 1;
 }
