@@ -9,7 +9,7 @@
         var path = window.location.pathname;
         var query = window.location.search;
         var hash = window.location.hash;
-        window.location.href = redirect + path;
+        window.location.href = redirect + '#' + path + query + hash;
       })();
     </script>
   </head>
