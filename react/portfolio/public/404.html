@@ -5,11 +5,11 @@
     <script>
       // Redirect to the root while preserving the full path
       (function() {
-        var redirect = '/Portfolio';
+        var redirect = '/';
         var path = window.location.pathname;
         var query = window.location.search;
         var hash = window.location.hash;
-        window.location.href = redirect + '#' + path + query + hash;
+        window.location.href = redirect + path;
       })();
     </script>
   </head>
