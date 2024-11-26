@@ -23,7 +23,7 @@ function App() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div className={`navbar ${isActive ? 'active' : ''}`}>
         <div className="navbar-links">
-          <button onClick={() => navigate('/')}>Home</button>
+          <button onClick={() => navigate('/Portfolio')}>Home</button>
           <button onClick={() => navigate('/python')}>Flappy Bird</button>
           <button onClick={() => navigate('/web')}>Web design</button>
           <button onClick={() => navigate('/weather')}>Weather app</button>
@@ -39,7 +39,7 @@ function App() {
 
       <main style={{ flex: 1 }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Portfolio" element={<Home />} />
           <Route path="/python" element={<Python />} />
           <Route path="/web" element={<Web />} />
           <Route path="/weather" element={<Weather />} />
