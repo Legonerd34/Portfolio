@@ -3,14 +3,14 @@
   <head>
     <meta http-equiv="refresh" content="0; url=/" />
     <script>
-      // Redirect to the root while preserving the full path
-      (function() {
-        var redirect = '/';
+      // Redirect back to the React app while preserving the path
+      (function () {
         var path = window.location.pathname;
         var query = window.location.search;
         var hash = window.location.hash;
-        window.location.href = redirect + '#' + path + query + hash;
+        window.location.href = '/' + '#' + path + query + hash;
       })();
     </script>
   </head>
+  <body></body>
 </html>
