@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.e628aaef.css",
-    "main.js": "/Portfolio/static/js/main.081d238d.js",
+    "main.js": "/Portfolio/static/js/main.4208bcc6.js",
+    "static/media/motherboard GREY.png": "/Portfolio/static/media/motherboard GREY.7300af52389e78f8824c.png",
     "index.html": "/Portfolio/index.html",
     "main.e628aaef.css.map": "/Portfolio/static/css/main.e628aaef.css.map",
-    "main.081d238d.js.map": "/Portfolio/static/js/main.081d238d.js.map"
+    "main.4208bcc6.js.map": "/Portfolio/static/js/main.4208bcc6.js.map"
   },
   "entrypoints": [
     "static/css/main.e628aaef.css",
-    "static/js/main.081d238d.js"
+    "static/js/main.4208bcc6.js"
   ]
 }
