@@ -1,13 +1,13 @@
 function Web(){
     return(
-        <div class="content">
+        <div className="content">
 
 
             <h1>Web design</h1>
 
             <br/>
 
-            <div class="web_app">
+            <div className="web_app">
             
                 <object type="text/html" data="https://www.angelagreenwood.net" id="web">
                 </object>
