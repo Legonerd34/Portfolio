@@ -309,10 +309,15 @@ function Python(){
                     </button>
 
                     {isLoaded && (
-                        <object
-                            type="text/html"
-                            data="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
+                        //<object
+                        //    type="text/html"
+                        //    data="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
+                        //    id="flappy"
+                        ///>
+                        <iframe
+                            src="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
                             id="flappy"
+                            title="Flappy bird game"
                         />
                     )}
 
