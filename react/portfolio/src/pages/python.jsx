@@ -311,7 +311,7 @@ function Python(){
                     {isLoaded && (
                         <object
                             type="text/html"
-                            data="/fboop2/build/web/index.html"
+                            data="Portfolio/react/portfolio/public/fboop2/build/web/index.html"
                             id="flappy"
                         />
                     )}

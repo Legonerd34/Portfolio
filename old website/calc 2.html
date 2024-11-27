@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/highlight.js/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/highlightjs-line-numbers.min.css">
+
+</head>
+<body>
+
+    <div class="content, app-body">
+
+    <div class="app">
+                
+                <h2 id="calc-title">Calculator</h2>
+
+                <div id="calculator">
+                    <input id="screen" readonly="true">
+                    <div id="buttons">
+                        <button onclick="append_display('+')" class="operator">+</button>
+                        <button onclick="append_display('7')" class="button">7</button>
+                        <button onclick="append_display('8')" class="button">8</button>
+                        <button onclick="append_display('9')" class="button">9</button>
+                        <button onclick="append_display('-')" class="operator">-</button>
+                        <button onclick="append_display('4')" class="button">4</button>
+                        <button onclick="append_display('5')" class="button">5</button>
+                        <button onclick="append_display('6')" class="button">6</button>
+                        <button onclick="append_display('*')" class="operator">*</button>
+                        <button onclick="append_display('1')" class="button">1</button>
+                        <button onclick="append_display('2')" class="button">2</button>
+                        <button onclick="append_display('3')" class="button">3</button>
+                        <button onclick="append_display('/')" class="operator">/</button>
+                        <button onclick="append_display('0')" class="button">0</button>
+                        <button onclick="append_display('.')" class="button">.</button>
+                        <button onclick="calculate()" class="operator">=</button>
+                        <button onclick="clear_display()" class="operator">AC</button>
+                    </div>
+
+                    <script src="calc.js"></script>
+
+                    </div>
+                    </div>
+
+                    <div class="code">
+
+                        <pre><code class="language-javascript">
+const display = document.getElementById('screen');
+
+function append_display(input){
+    display.value += input;
+}
+
+function calculate(){
+    try {
+        display.value = eval(display.value);
+    }
+    catch(error) {
+        display.value = `error: ${error}`;
+    }
+    finally {
+        if (display.value === "Infinity") {
+            display.value = "error: cannot divide by zero";
+        }
+    }
+}
+
+function clear_display(){
+    display.value = "";
+}
+                    </code></pre>
+                    <pre><code class="language-html">
+
+                    
+&lt;div id="calculator"&gt;
+&lt;input id="screen" readonly="true"&gt;
+&lt;div id="buttons"&gt;
+    &lt;button onclick="append_display('+')" class="operator"&gt;+&lt;/button&gt;
+    &lt;button onclick="append_display('7')" class="button"&gt;7&lt;/button&gt;
+    &lt;button onclick="append_display('8')" class="button"&gt;8&lt;/button&gt;
+    &lt;button onclick="append_display('9')" class="button"&gt;9&lt;/button&gt;
+    &lt;button onclick="append_display('-')" class="operator"&gt;-&lt;/button&gt;
+    &lt;button onclick="append_display('4')" class="button"&gt;4&lt;/button&gt;
+    &lt;button onclick="append_display('5')" class="button"&gt;5&lt;/button&gt;
+    &lt;button onclick="append_display('6')" class="button"&gt;6&lt;/button&gt;
+    &lt;button onclick="append_display('*')" class="operator"&gt;*&lt;/button&gt;
+    &lt;button onclick="append_display('1')" class="button"&gt;1&lt;/button&gt;
+    &lt;button onclick="append_display('2')" class="button"&gt;2&lt;/button&gt;
+    &lt;button onclick="append_display('3')" class="button"&gt;3&lt;/button&gt;
+    &lt;button onclick="append_display('/')" class="operator"&gt;/&lt;/button&gt;
+    &lt;button onclick="append_display('0')" class="button"&gt;0&lt;/button&gt;
+    &lt;button onclick="append_display('.')" class="button"&gt;.&lt;/button&gt;
+    &lt;button onclick="calculate()" class="operator"&gt;=&lt;/button&gt;
+    &lt;button onclick="clear_display()" class="operator"&gt;AC&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script src="calc.js"&gt;&lt;/script&gt;
+
+                    
+                    </code></pre>
+
+                    
+                    
+
+                
+
+                </div>
+
+                </div>
+            
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        });
+    </script>
+
+    <div class="footer">
+        <hr style="color:darkgrey;">
+        <div class="footer-elements">
+            <p class="footer-element">2024 Max Bushell</p>
+            <a href="https://github.com/Legonerd34" target="_blank" class="footer-element">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width:20px; height:20px;">
+            </a>
+
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="footer-element">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:20px; height:20px;">
+            </a>
+
+        </div>
+
+    </div>
+
+    
+

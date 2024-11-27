@@ -1,0 +1,430 @@
+body {
+    background-color: #172331;
+    color: white;
+    font-family: monospace;
+    margin: 25px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+
+.content {
+    flex: 1;
+}
+a img {
+    margin: 10px; /* Adds spacing between the icons */
+    transition: transform 0.3s ease; /* Smooth animation */
+  }
+  
+a img:hover {
+    transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+  
+
+#apps {
+    display: grid !important;
+    gap: 10px;
+    padding: 25px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer {
+    width: 100%;         /* Makes the footer span the full width */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: #172331;
+}
+
+.footer-elements {
+    display: grid !important;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 1px; 
+    padding: 5px;
+    color: white;
+    background-color: #172331;
+}
+
+@media (max-width: 600px) {
+    #footer-elements {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center;    /* Center the items */
+    }
+}
+  
+
+
+.footer-element {
+    text-align: center;
+    background-color: #172331;       /* Center aligns the content inside each item */
+}
+#me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    font-family: monospace, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    margin: 5px;
+}
+
+#profile_picture {
+    border: none;
+    border-radius: 100%;
+
+}
+
+#page {
+    display: grid !important;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: auto 1fr;
+    align-items: stretch !important;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+    
+}
+
+#projects {
+    display: grid !important;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    font-family: monospace, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-height: 100%;
+}
+
+.project {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgb(118, 118, 118);
+}
+
+.pythons-container{
+
+    display: grid !important;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: arial, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    margin: 20px;
+}
+
+.code {
+    max-height: 815px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border: 5px solid rgb(40, 44, 52);
+    background-color: rgb(40, 44, 52);
+    border-radius: 15px;
+
+}
+
+
+.app-body {
+    display: grid !important;
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: auto 1fr; 
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: arial, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: fit-content;
+    height: 775px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hljs-ln-numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 15px !important;
+    color: #ccc;
+    vertical-align: top;
+    user-select: none;
+
+}
+pre {
+    white-space: pre-wrap !important; 
+    word-wrap: break-word !important; 
+}
+
+code {
+    white-space: pre !important; 
+}
+.hljs {
+    white-space: pre-wrap; /* This ensures that the indentation (tabs or spaces) is preserved */
+    word-wrap: break-word; /* Prevents long lines from breaking the layout */
+}
+
+.hljs-ln-code {
+    padding-left: 10px; /* Adjust padding as necessary */
+    white-space: pre-wrap; /* Ensures indentation is visible in the code block */
+}
+
+.hljs-ln-numbers {
+    user-select: none; /* Prevents the line numbers from being selected with the text */
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid rgb(63, 62, 62); /* Add a visual divider between the line numbers and code */
+}
+
+
+.hljs, pre, code {
+    white-space: pre-wrap !important; /* Ensure spaces/tabs are respected */
+    padding-left: 10px; /* Optional: Add padding for better appearance */
+}
+
+
+.app::-webkit-scrollbar {
+    display: none; 
+  }
+
+.web_app {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: arial, sans-serif;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    margin: 20px;
+}
+
+.web_app::-webkit-scrollbar {
+    display: none;
+  }
+
+#web {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 15px;
+}
+
+#flappy {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 15px;
+}
+
+
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: rgb(31, 28, 28);
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
+}
+#screen{
+    width: 92%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color: rgb(31, 28, 28);
+    color: white;
+
+}
+#buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+.button{
+    background-color: rgba(80, 68, 68, 0.574);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgba(106, 93, 93, 0.57);
+
+}
+.button:active{
+    background-color: rgba(134, 119, 119, 0.57);
+
+}
+
+.operator{
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.operator:hover{
+    background-color: rgb(252, 184, 57);
+}
+.operator:active{
+    background-color: rgb(251, 197, 96);
+
+}
+#app-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: arial, sans-serif;
+    background-color: lightgrey;
+    max-width: 500px;
+    
+
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(126, 126, 255), rgb(233, 183, 91));
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;  
+    min-width: 300px;
+    min-height: 500px;;
+    
+
+
+}
+
+#city {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#temp {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+}
+#humidity #time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+
+}
+#description {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+
+}
+#emoji {
+    font-size: 8rem;
+    margin: 0;
+}
+#error {
+    font-weight: bold;
+    color: red;
+    
+}
+#input {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#button {
+    background-color: rgb(130, 130, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#button:hover {
+    background-color: rgba(130, 130, 255, 0.605);
+
+}
+
+.input-recipe {
+    width : 157px; 
+}
+
+.button-recipe {
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+}
+
+.button-recipe:hover {
+    background-color: rgb(169, 169, 169);
+}
+
+#output {
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+    display: none;
+    margin: 20px;
+    padding: 10px;
+}

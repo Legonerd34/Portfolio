@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="assets/highlight.js/styles/atom-one-dark-reasonable.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/highlightjs-line-numbers.min.css">
+
+</head>
+<body>
+
+    <div class="content, app-body">
+
+    <div class="app" id="recipe">
+
+            <h2>Recipe finder</h2>
+
+            <p>May take up to 30 seconds</p>
+
+            <form id="container">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_1" class="input-recipe" autocomplete="on" required="required">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_2" class="input-recipe" autocomplete="on" required="required">
+                <input type="input" placeholder="Please enter an ingredient" id="ingredient_3" class="input-recipe" autocomplete="on" required="required">
+                <input type="number" placeholder="how many reciepes would you like" id="count" class="input-recipe" value="5" min="1" max="10">
+
+                <button type="submit" class="button-recipe">submit</button>    
+            </form><br><br>
+    
+            <div id="output"></div>
+
+            <script src="recipe.js"></script>
+        </div>
+
+<div class="code">
+    <pre><code class="language-javascript">
+const container = document.getElementById("container");
+const post_url_recipes_1 = "https://dh0wkzi4.run.nodescript.dev/recipe-finder";
+const post_url_recipes_2 = "https://dh0wkzi4.run.nodescript.dev/recipes_finder_2";
+
+
+
+const output = document.getElementById("output");
+
+
+
+container.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    console.log("Function started");
+
+    const ingredient_1 = document.getElementById("ingredient_1").value;
+    const ingredient_2 = document.getElementById("ingredient_2").value;
+    const ingredient_3 = document.getElementById("ingredient_3").value;
+    const count = document.getElementById("count").value;
+
+    const object = { 
+        ingredient_1 : ingredient_1, 
+        ingredient_2 : ingredient_2, 
+        ingredient_3 : ingredient_3,
+        count : count
+                    }
+
+    const response = await fetch(post_url_recipes_2, {
+        method : "POST",
+        headers : {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body : JSON.stringify(object)
+      })
+
+    console.log('status:', response.status);
+
+    const html = await response.text();
+
+    output.style.display = 'block';
+
+
+    output.innerHTML = html; 
+
+})
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+            hljs.initLineNumbersOnLoad();
+        });
+    </script>
+
+
+    <div class="footer">
+        <hr style="color:darkgrey;">
+        <div class="footer-elements">
+            <p class="footer-element">2024 Max Bushell</p>
+            <a href="https://github.com/Legonerd34" target="_blank" class="footer-element">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width:20px; height:20px;">
+            </a>
+
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="footer-element">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:20px; height:20px;">
+            </a>
+
+        </div>
+
+    </div>
+
+    
+
