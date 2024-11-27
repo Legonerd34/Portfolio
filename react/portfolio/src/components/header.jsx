@@ -12,7 +12,7 @@ function Header() {
     <Box
       sx={{
         height: '100px', 
-        backgroundImage: `url(https://legonerd34.github.io/Portfolio/react/portfolio/src/assets/motherboard%20GREY.png)`, 
+        backgroundImage: `url(https://legonerd34.github.io/Portfolio/motherboard%20GREY.png)`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
