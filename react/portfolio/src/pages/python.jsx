@@ -318,7 +318,7 @@ function Python(){
                             src="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
                             id="flappy"
                             title="Flappy bird game"
-                            style="width: 100%; height: 100%; border: none;"
+                            style={{width: "100%", height: "100%", border: "none",}}
                             allowfullscreen="true"
                         />
                     )}
