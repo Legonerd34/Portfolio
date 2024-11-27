@@ -11,10 +11,13 @@ function Header() {
   return (
     <Box
       sx={{
-        height: '100px', 
+        width: '100%',
+        height: '100px',
+        position: 'relative',
         backgroundImage: `url(https://legonerd34.github.io/Portfolio/motherboard%20GREY.png)`, 
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
