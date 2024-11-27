@@ -4,7 +4,6 @@ import Typography from '@mui/joy/Typography';
 import Button from '@mui/joy/Button';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
-import bg from 'https://github.com/Legonerd34/Portfolio/blob/69e345dd3d9eead60c673f8d835d48e096a80dce/react/portfolio/src/assets/motherboard%20GREY.png';
 
 function Header() {
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ function Header() {
     <Box
       sx={{
         height: '100px', 
-        backgroundImage: `url(${bg})`, 
+        backgroundImage: `url(https://github.com/Legonerd34/Portfolio/blob/69e345dd3d9eead60c673f8d835d48e096a80dce/react/portfolio/src/assets/motherboard%20GREY.png)`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
