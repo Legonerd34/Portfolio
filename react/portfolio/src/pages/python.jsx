@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import "../assets/highlight.js/styles/atom-one-dark-reasonable.css";
-import '../index.css';
-import Highlight from 'react-highlight'
-import Typography from '@mui/joy/Typography';
+import React, { useState } from "react";
+import Highlight from "react-highlight";
+import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
+import Button from "@mui/joy/Button";
+import AspectRatio from "@mui/joy/AspectRatio";
 
 
 function Python(){
@@ -289,50 +290,87 @@ function Python(){
         
 
     
-    return(
-        <div className="content">
+    return (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 3,
+            padding: 3,
+            color: "white",
+          }}
+        >
+          <Typography level="h1" sx={{ textAlign: "center", color: "white" }}>
+            Flappy Bird
+          </Typography>
 
-            <Typography level="h1" sx={{ color: "white" }}>Flappy Bird</Typography>
-
-            <div id="Python" className="pythons-container">
-
-                <div>
-
-                    <Typography level="body-md">
-                        Here is my version of Flappy Bird made in python. 
-                        In order to use this app click the Load button and get ready to start playing. 
-                        The only controls you need to know is that the enter key is to jump and if you die and want to restart the game just click the reload button which will appear below the game once you have begun playing.
-                    </Typography>
-
-                    <button onClick={isLoaded ? reload : load}>
-                        {isLoaded ? "Re-load" : "Load"}
-                    </button>
-
-                    {isLoaded && (
-                        //<object
-                        //    type="text/html"
-                        //    data="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
-                        //    id="flappy"
-                        ///>
-                        <iframe
-                            src="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
-                            id="flappy"
-                            title="Flappy bird game"
-                            style={{width: "100%", height: "100%", border: "none",}}
-                            allowfullscreen="true"
-                        />
-                    )}
-
-                </div>
-
-                <div className="code">
-                    <Highlight className="language-python">{code}</Highlight>
-                </div>
-            </div>
-
-        </div>
-
-    )
+          <Typography level="body-lg" sx={{ maxWidth: "800px", textAlign: "center", color: "lightgray" }}>
+            Here is my version of Flappy Bird made in Python. To play, click the
+            Load button to start. Use the Enter key to jump. If you lose, click the
+            Reload button to restart.
+          </Typography>
+    
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <Button variant="solid" onClick={isLoaded ? reload : load}>
+              {isLoaded ? "Re-load" : "Load"}
+            </Button>
+          </Box>
+    
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: 3,
+              width: "100%",
+              maxWidth: "1200px",
+              alignItems: "flex-start",
+            }}
+          >
+            <AspectRatio
+              ratio="288/512"
+              sx={{
+                flex: 1,
+                width: "100%",
+                maxWidth: "600px",
+                borderRadius: "md",
+                overflow: "hidden",
+                boxShadow: "md",
+                maxHeight: "1000px",
+              }}
+            >
+              {isLoaded && (
+                <iframe
+                  src="https://legonerd34.github.io/Portfolio/fboop2/build/web/index.html"
+                  title="Flappy Bird Game"
+                  style={{
+                    width: "100%",
+                    maxheight: "1000px",
+                    border: "none",
+                  }}
+                  allowFullScreen
+                />
+              )}
+            </AspectRatio>
+    
+            <Box
+              sx={{
+                flex: 1,
+                backgroundColor: "#282c34",
+                borderRadius: "md",
+                padding: 2,
+                boxShadow: "sm",
+                maxHeight: "1000px",
+                overflow: "auto",
+              }}
+            >
+                
+              <Highlight className="language-python">{code}</Highlight>
+            </Box>
+          </Box>
+        </Box>
+      );
 }
 
 export default Python;
