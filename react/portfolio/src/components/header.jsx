@@ -12,7 +12,7 @@ function Header() {
     <Box
       sx={{
         width: '100%',
-        height: '100px',
+        height: '205px',
         position: 'relative',
         backgroundImage: `url(https://legonerd34.github.io/Portfolio/motherboardclear.png)`, 
         backgroundSize: 'cover',
