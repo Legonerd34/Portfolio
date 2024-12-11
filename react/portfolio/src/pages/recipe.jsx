@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../assets/highlight.js/styles/atom-one-dark-reasonable.css";
-import '../index.css';
-import Highlight from 'react-highlight'
-import Typography from '@mui/joy/Typography';
+import "../index.css";
+import Highlight from "react-highlight";
+import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import Input from "@mui/joy/Input";
+import Button from "@mui/joy/Button";
 
 function Recipe(){
     const code =`
@@ -93,63 +97,115 @@ container.addEventListener("submit", async function (event) {
     };
 
     return (
-        <div className="content app-body">
-            <div className="app" id="recipe">
-                <Typography level="h2">Recipe Finder</Typography>
-                <Typography level="body-md">May take up to 30 seconds</Typography>
-
-                <form onSubmit={handleSubmit} id="container">
-                    <input
-                        type="text"
-                        placeholder="Please enter an ingredient"
-                        value={ingredient1}
-                        onChange={(e) => setIngredient1(e.target.value)}
-                        className="input-recipe"
-                        autoComplete="on"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Please enter an ingredient"
-                        value={ingredient2}
-                        onChange={(e) => setIngredient2(e.target.value)}
-                        className="input-recipe"
-                        autoComplete="on"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Please enter an ingredient"
-                        value={ingredient3}
-                        onChange={(e) => setIngredient3(e.target.value)}
-                        className="input-recipe"
-                        autoComplete="on"
-                        required
-                    />
-                    <input
-                        type="number"
-                        placeholder="How many recipes would you like"
-                        value={count}
-                        onChange={(e) => setCount(e.target.value)}
-                        className="input-recipe"
-                        min="1"
-                        max="10"
-                    />
-                    <button type="submit" className="button-recipe">
-                        {isLoading ? 'Loading...' : 'Submit'}
-                    </button>
-                </form>
-                <br />
-                <br />
-
-                <div id="output" style={{ display: output ? 'block' : 'none' }} dangerouslySetInnerHTML={{ __html: output }} />
-            </div>
-            <div className="code" style={{minWidth: "100%"}}>
-                <Highlight className="language-javascript">{code}</Highlight>
-            </div>
-            
-        </div>
-    );
+        <Box
+          sx={{
+            padding: 4,
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+            maxWidth: 1200,
+            margin: "auto",
+            color: "white",
+          }}
+        >
+          {/* Title and Description */}
+          <Box sx={{ textAlign: "center" }}>
+            <Typography level="h1" sx={{ color: "white", marginBottom: 2 }}>
+              Recipe Finder
+            </Typography>
+            <Typography level="body-lg" sx={{ color: "lightgray" }}>
+              Find recipes based on the ingredients you have at hand. The app
+              fetches recipes from the server based on your inputs.
+            </Typography>
+          </Box>
+    
+          {/* Two-Column Layout */}
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+              gap: 4,
+            }}
+          >
+            {/* Left Column: Working Program */}
+            <Card
+              sx={{
+                padding: 3,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              <Typography level="h2" sx={{ textAlign: "center", marginBottom: 2 }}>
+                Try It Out
+              </Typography>
+    
+              <form onSubmit={handleSubmit} id="container">
+                <Input
+                  placeholder="Ingredient 1"
+                  value={ingredient1}
+                  onChange={(e) => setIngredient1(e.target.value)}
+                  sx={{ marginBottom: 2 }}
+                  required
+                />
+                <Input
+                  placeholder="Ingredient 2"
+                  value={ingredient2}
+                  onChange={(e) => setIngredient2(e.target.value)}
+                  sx={{ marginBottom: 2 }}
+                  required
+                />
+                <Input
+                  placeholder="Ingredient 3"
+                  value={ingredient3}
+                  onChange={(e) => setIngredient3(e.target.value)}
+                  sx={{ marginBottom: 2 }}
+                  required
+                />
+                <Input
+                  type="number"
+                  placeholder="Number of recipes"
+                  value={count}
+                  onChange={(e) => setCount(e.target.value)}
+                  sx={{ marginBottom: 2 }}
+                  min="1"
+                  max="10"
+                  required
+                />
+                <Button type="submit" sx={{ marginBottom: 2 }}>
+                  {isLoading ? "Loading..." : "Submit"}
+                </Button>
+              </form>
+    
+              {output && (
+                <Box
+                  sx={{
+                    padding: 2,
+                    backgroundColor: "neutral.100",
+                    borderRadius: "sm",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: output }}
+                />
+              )}
+            </Card>
+    
+            {/* Right Column: Code Block */}
+            <Box
+              sx={{
+                flex: 1,
+                backgroundColor: "#282c34",
+                borderRadius: "md",
+                padding: 2,
+                boxShadow: "sm",
+                maxHeight: "1000px",
+                overflow: "auto",
+              }}
+            >
+              <Highlight className="language-javascript">{code}</Highlight>
+            </Box>
+          </Box>
+        </Box>
+      );
 }
 
 export default Recipe;

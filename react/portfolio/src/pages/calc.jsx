@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../assets/highlight.js/styles/atom-one-dark-reasonable.css";
-import '../index.css';
-import Highlight from 'react-highlight'
-import Typography from '@mui/joy/Typography';
+import "../index.css";
+import Highlight from "react-highlight";
+import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import Button from "@mui/joy/Button";
+import Input from "@mui/joy/Input";
 
 function Calc() {
+  const [screen, setScreen] = useState("");
 
-    const [screen, setScreen] = useState("");
+  function appendDisplay(input) {
+    setScreen((prevScreen) => prevScreen + input);
+  }
 
-    function appendDisplay(input) {
-        setScreen((prevScreen) => prevScreen + input);
+  function calculate() {
+    try {
+      setScreen((prevScreen) => {
+        const result = eval(prevScreen);
+        return result === Infinity ? "error: cannot divide by zero" : result;
+      });
+    } catch (error) {
+      setScreen("error: invalid operation");
     }
+  }
 
-    function calculate() {
-        try {
-            
-            setScreen((prevScreen) => {
-                const result = eval(prevScreen);
-                return result === Infinity ? "error: cannot divide by zero" : result;
-            });
-        } catch (error) {
-            setScreen("error: invalid operation");
-        }
-    }
+  function clearDisplay() {
+    setScreen("");
+  }
 
-    function clearDisplay() {
-        setScreen("");
-    }
-
-    const codeHTML = `
+  const codeHTML = `
 <div id="calculator">
-    <input id="screen" readonly="true"/>
+    <input id="screen" readonly="true" />
     <div id="buttons">
         <button onclick="append_display('+')" class="operator">+</button>
         <button onclick="append_display('7')" class="button">7</button>
@@ -53,7 +55,7 @@ function Calc() {
 </div>
 `;
 
-    const codeJS = `
+  const codeJS = `
 const display = document.getElementById('screen');
 
 function append_display(input){
@@ -79,50 +81,127 @@ function clear_display(){
 }
 `;
 
-    return (
-        <div className="content app-body">
-            <div className="app">
-                <h2 id="calc-title">Calculator</h2>
+  return (
+    <Box
+      sx={{
+        padding: 4,
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+        maxWidth: 1200,
+        margin: "auto",
+        color: "white",
+      }}
+    >
+      {/* Title and Description */}
+      <Box sx={{ textAlign: "center" }}>
+        <Typography level="h1" sx={{ color: "white", marginBottom: 2 }}>
+          Calculator
+        </Typography>
+        <Typography level="body-lg" sx={{ color: "lightgray" }}>
+          A simple calculator to perform basic arithmetic operations. Try it
+          out!
+        </Typography>
+      </Box>
 
-                <div id="calculator">
-                    <input
-                        id="screen"
-                        readOnly
-                        value={screen} 
-                    />
-                    <div id="buttons">
-                        <button onClick={() => appendDisplay('+')} className="operator">+</button>
-                        <button onClick={() => appendDisplay('7')} className="button">7</button>
-                        <button onClick={() => appendDisplay('8')} className="button">8</button>
-                        <button onClick={() => appendDisplay('9')} className="button">9</button>
-                        <button onClick={() => appendDisplay('-')} className="operator">-</button>
-                        <button onClick={() => appendDisplay('4')} className="button">4</button>
-                        <button onClick={() => appendDisplay('5')} className="button">5</button>
-                        <button onClick={() => appendDisplay('6')} className="button">6</button>
-                        <button onClick={() => appendDisplay('*')} className="operator">*</button>
-                        <button onClick={() => appendDisplay('1')} className="button">1</button>
-                        <button onClick={() => appendDisplay('2')} className="button">2</button>
-                        <button onClick={() => appendDisplay('3')} className="button">3</button>
-                        <button onClick={() => appendDisplay('/')} className="operator">/</button>
-                        <button onClick={() => appendDisplay('0')} className="button">0</button>
-                        <button onClick={() => appendDisplay('.')} className="button">.</button>
-                        <button onClick={calculate} className="operator">=</button>
-                        <button onClick={clearDisplay} className="operator">AC</button>
-                    </div>
-                </div>
-            </div>
+      {/* Two-Column Layout */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 4,
+        }}
+      >
+        {/* Left Column: Calculator */}
+        <Card
+          sx={{
+            padding: 3,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
+          <Typography level="h2" sx={{ textAlign: "center", marginBottom: 2 }}>
+            Try It Out
+          </Typography>
 
-            <div className="code">
-                <Highlight className="language-html">
-                    {codeHTML}
-                </Highlight>
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: 300,
+              display: "flex",
+              flexDirection: "column",
+              gap: 1,
+            }}
+          >
+            <Input
+              value={screen}
+              readOnly
+              sx={{
+                marginBottom: 2,
+                textAlign: "right",
+                backgroundColor: "neutral.100",
+                padding: 1,
+              }}
+            />
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: 1,
+              }}
+            >
+              {["7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "*", "0", ".", "=", "/"].map((item) => (
+                <Button
+                  key={item}
+                  onClick={
+                    item === "="
+                      ? calculate
+                      : item === "AC"
+                      ? clearDisplay
+                      : () => appendDisplay(item)
+                  }
+                  sx={{
+                    backgroundColor:
+                      ["+", "-", "*", "/", "="].includes(item)
+                        ? "primary.500"
+                        : "neutral.300",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {item}
+                </Button>
+              ))}
+              <Button
+                onClick={clearDisplay}
+                sx={{ gridColumn: "span 4", backgroundColor: "error.500" }}
+              >
+                AC
+              </Button>
+            </Box>
+          </Box>
+        </Card>
 
-                <Highlight className="language-javascript">
-                    {codeJS}
-                </Highlight>
-            </div>
-        </div>
-    );
+        {/* Right Column: Code Block */}
+        <Box
+          sx={{
+            flex: 1,
+            backgroundColor: "#282c34",
+            borderRadius: "md",
+            padding: 2,
+            boxShadow: "sm",
+            maxHeight: "1000px",
+            overflow: "auto",
+          }}
+        >
+          <Highlight className="language-html">{codeHTML}</Highlight>
+          <Highlight className="language-javascript">{codeJS}</Highlight>
+        </Box>
+      </Box>
+    </Box>
+  );
 }
 
 export default Calc;

@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../assets/highlight.js/styles/atom-one-dark-reasonable.css";
-import '../index.css';
-import Highlight from 'react-highlight'
-import Typography from '@mui/joy/Typography';
+import "../index.css";
+import Highlight from "react-highlight";
+import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import Input from "@mui/joy/Input";
+import Button from "@mui/joy/Button";
+import Divider from "@mui/joy/Divider";
+
 
 function Weather(){
     const code = `
@@ -193,47 +199,112 @@ const getEmoji = (weatherID) => {
   }
 };
 
-const formatTime = (timezone) => {
-  const utc = new Date();
-  const localTime = new Date(utc.getTime() + timezone * 1000);
-  const hours = localTime.getUTCHours().toString().padStart(2, "0");
-  const minutes = localTime.getUTCMinutes().toString().padStart(2, "0");
-  return `${hours}:${minutes}`;
-};
-
 return (
-    <div className="content app-body">
-      <div className="app" id="app-weather">
-        <Typography level="h2">Weather App</Typography>
+    <Box
+      sx={{
+        padding: 4,
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+        maxWidth: 1200,
+        margin: "auto",
+      }}
+    >
+      {/* Top Section */}
+      <Box>
+        <Typography level="h1" sx={{ textAlign: "center", marginBottom: 2, color: "white", }}>
+          Weather App
+        </Typography>
+        <Typography level="body-lg" sx={{ textAlign: "center", color: "lightgray", }}>
+          This project demonstrates a weather application built using modern
+          JavaScript. Enter a city name to get the current weather data,
+          including temperature, humidity, and a description.
+        </Typography>
+      </Box>
 
-        <form className="form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Please enter a city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <button type="submit">Submit</button>
-        </form>
+      {/* Two-Column Layout */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 4,
+        }}
+      >
+        {/* Left Column: Weather App */}
+        <Card
+          sx={{
+            padding: 3,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
+          <form onSubmit={handleSubmit}>
+            <Input
+              placeholder="Enter city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              sx={{ marginBottom: 2 }}
+            />
+            <Button type="submit">Submit</Button>
+          </form>
 
-        {error && <p id="error" style={{ display: "flex", color: "red" }}>{error}</p>}
+          {error && (
+            <Typography
+              level="body-sm"
+              color="danger"
+              sx={{ textAlign: "center" }}
+            >
+              {error}
+            </Typography>
+          )}
 
-        {weatherData && (
-          <div id="card" style={{ display: "flex", flexDirection: "column" }}>
-            <h1 id="city">{weatherData.name}</h1>
-            <p id="temp">{(weatherData.main.temp - 273.15).toFixed(1)}°C</p>
-            <p id="humidity">Humidity: {weatherData.main.humidity}%</p>
-            <p id="description">{weatherData.weather[0].description}</p>
-            <p id="emoji">{getEmoji(weatherData.weather[0].id)}</p>
-            <p id="time">Current time: {formatTime(weatherData.timezone)}</p>
-          </div>
-        )}
-      </div>
+          {weatherData && (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+                padding: 2,
+                backgroundColor: "neutral.100",
+                borderRadius: "sm",
+              }}
+            >
+              <Typography level="h2" sx={{ textAlign: "center" }}>
+                {getEmoji(weatherData.weather[0].id)} {weatherData.name}
+              </Typography>
+              <Divider />
+              <Typography level="body-lg">
+                <strong>Temperature:</strong>{" "}
+                {(weatherData.main.temp - 273.15).toFixed(1)}°C
+              </Typography>
+              <Typography level="body-lg">
+                <strong>Humidity:</strong> {weatherData.main.humidity}%
+              </Typography>
+              <Typography level="body-lg">
+                <strong>Description:</strong> {weatherData.weather[0].description}
+              </Typography>
+            </Box>
+          )}
+        </Card>
 
-      <div className="code">
-        <Highlight className="language-javascript">{code}</Highlight>
-      </div>
-    </div>
+        {/* Right Column: Code Snippet */}
+        <Box
+              sx={{
+                flex: 1,
+                backgroundColor: "#282c34",
+                borderRadius: "md",
+                padding: 2,
+                boxShadow: "sm",
+                maxHeight: "1000px",
+                overflow: "auto",
+              }}
+            >
+                
+              <Highlight className="language-javascript">{code}</Highlight>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
