@@ -36,9 +36,10 @@ function Web() {
           color: "lightgray",
         }}
       >
-        Below is an example of my web design work. This embedded website
-        showcases my ability to create clean, responsive, and user-friendly
-        designs.
+        The website below is my first live website for a real customer. 
+        Through this project I taught myself HTML and CSS. 
+        This was a useful introdution to web development but now I have moved on to using React, a more efficient and elegant web development tool, more of a challenge and has developed my skills. 
+        This Portfolio was created in React.
       </Typography>
 
       {/* Card for the Embedded Website */}

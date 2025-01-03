@@ -216,9 +216,8 @@ return (
           Weather App
         </Typography>
         <Typography level="body-lg" sx={{ textAlign: "center", color: "lightgray", }}>
-          This project demonstrates a weather application built using modern
-          JavaScript. Enter a city name to get the current weather data,
-          including temperature, humidity, and a description.
+          This project fetches the data from the open weather service using the input prarmeters.
+          I undertook this projects to give myself practical experience of using API's and JavaScript data handling.
         </Typography>
       </Box>
 

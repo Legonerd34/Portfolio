@@ -57,7 +57,7 @@ function Footer() {
 
         {/* LinkedIn Icon Link */}
         <Link
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/max-bushell-44b360342/"
           target="_blank"
           rel="noopener noreferrer"
         >

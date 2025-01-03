@@ -52,7 +52,7 @@ function Header() {
         Recipe Finder
         </Button>
         <Button variant="solid" color="neutral" onClick={() => navigate('/calc')}>
-        Calculator
+        Discord Apps
         </Button>
       
       </Box>

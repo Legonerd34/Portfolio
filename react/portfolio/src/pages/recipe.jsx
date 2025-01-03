@@ -114,9 +114,13 @@ container.addEventListener("submit", async function (event) {
               Recipe Finder
             </Typography>
             <Typography level="body-lg" sx={{ color: "lightgray" }}>
-              Find recipes based on the ingredients you have at hand. The app
-              fetches recipes from the server based on your inputs.
+              Moving on from the weather app API project which used existing API's I wanted to challenge myself to create my own API.
+              This was acheived using NodeScript which is a low code high level programming language which I learnt during my placement at <a href="https://ub.io">UBIO</a>.
+              This uses NodeScript's easy access webscraping tools, the initial version of this project inputs data to a supermarket website and then scrape the results.
+              The second version I decided to try an alternative approach by using the google search API to fetch results of a google search, then these outputs were put in the ChatGPT API to create summaries. 
             </Typography>
+            <br/>
+            <img width="1200" alt="reciep script" src="https://github.com/user-attachments/assets/fb1602b4-ab74-4ab9-97a5-520bdb93b5e3"/>
           </Box>
     
           {/* Two-Column Layout */}

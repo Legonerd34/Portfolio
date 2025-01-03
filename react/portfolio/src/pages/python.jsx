@@ -307,6 +307,12 @@ function Python(){
           </Typography>
 
           <Typography level="body-lg" sx={{ maxWidth: "800px", textAlign: "center", color: "lightgray" }}>
+            This is my first proper project I completed, I chose a pre-existing game so that I could put into practise
+            what I had already learnt in python. I challenged myself to make something without using any tutorials or input from
+            others. It gave more confidence in my ablities to create real projects.
+          </Typography>
+
+          <Typography level="body-lg" sx={{ maxWidth: "800px", textAlign: "center", color: "lightgray" }}>
             Here is my version of Flappy Bird made in Python. To play, click the
             Load button to start. Use the Enter key to jump. If you lose, click the
             Reload button to restart.
